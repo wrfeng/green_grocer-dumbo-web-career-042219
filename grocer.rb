@@ -5,7 +5,6 @@ def consolidate_cart(cart)
     item.each do |key, val|
       hash[key] = val
       hash[key][:count] = cart.count(item)
-      cart.delete(item)
     end
   end
   
