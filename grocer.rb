@@ -4,9 +4,12 @@ def consolidate_cart(cart)
   cart.each do |item|
     item.each do |key, val|
       hash[key] = val
-      hash[count] = cart.count
+      hash[count] = cart.count(item)
+      cart.delete(item)
     end
   end
+  
+  hash
 end
 
 def apply_coupons(cart, coupons)
