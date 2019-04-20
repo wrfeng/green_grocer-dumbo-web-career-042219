@@ -46,6 +46,7 @@ def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   couponed_cart = apply_coupons(consolidated_cart, coupons)
   clearance_cart = apply_clearance(couponed_cart)
+  
   clearance_cart.each do |key, val|
     sum += val[:price]
   end
