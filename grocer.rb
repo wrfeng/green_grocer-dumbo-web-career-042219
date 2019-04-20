@@ -33,6 +33,7 @@ def apply_clearance(cart)
   cart.each do |key, val|
     if val[:clearance]
       val[:price] *= 0.80
+      val[:price] = val[:price].trunacte(1)
     end
   end
   
