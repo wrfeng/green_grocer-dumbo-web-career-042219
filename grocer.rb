@@ -18,9 +18,9 @@ def apply_coupons(cart, coupons)
 
   cart.each do |item, values|
     hash[item] = values
+      coupons_applied = []
     coupons.each do |ele|
       if item == ele[:item] && hash[item][:count] >= ele[:num]
-        coupons_applied = []
         coupons_applied << coupons.delete(ele)
         hash[item + " W/COUPON"] = {:price => ele[:cost], :clearance => values[:clearance], :count => coupons_applied.count}
         hash[item][:count] -= ele[:num] if item == ele[:item]
