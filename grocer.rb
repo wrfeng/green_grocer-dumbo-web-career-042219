@@ -15,7 +15,7 @@ end
 def apply_coupons(cart, coupons)
   hash = {}
   
-  if coupons
+  unless coupons.empty?
     cart.each do |item, values|
       coupons.each do |ele|
         ele.each do |coupon_item, coupon_values|
