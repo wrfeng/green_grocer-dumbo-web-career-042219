@@ -237,11 +237,8 @@ describe "Grocer" do
         coupons = [find_coupon("AVOCADO"), find_coupon("CHEESE")]
         binding.pry
         consolidated = consolidate_cart(cart)
-          binding.pry
         coupons_applied = apply_coupons(consolidated, coupons)
-        binding.pry
         clearance_applied = apply_clearance(coupons_applied)
-        binding.pry
 
         expect(self).to receive(:consolidate_cart).with(cart).and_return(consolidated)
         expect(self).to receive(:apply_coupons).with(consolidated, coupons).and_return(coupons_applied)
