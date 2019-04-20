@@ -17,7 +17,7 @@ def apply_coupons(cart, coupons)
       ele.each do |coupon_item, coupon_values|
         if item == ele[:item]
           values[:count] -= ele[:num]
-          cart[item + " W/COUPON"] = {}
+          cart[item + " W/COUPON"] = 32
         end
       end
     end
