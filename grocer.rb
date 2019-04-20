@@ -20,7 +20,7 @@ def apply_coupons(cart, coupons)
     coupons.each do |ele|
       hash[item] = values
       if item == ele[:item]
-        hash[item + " W/COUPON"] = {:price => ele[:cost], :clearance => values[:clearance], :count => 1}
+        hash[item + " W/COUPON"] = {:price => ele[:cost], :clearance => values[:clearance], :count => coupons.count(ele[:item])}
         hash[item][:count] -= ele[:num] if item == ele[:item]
       end
     end
