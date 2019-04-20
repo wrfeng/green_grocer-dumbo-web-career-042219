@@ -47,7 +47,7 @@ def checkout(cart, coupons)
   couponed_cart = apply_coupons(consolidated_cart, coupons)
   clearance_cart = apply_clearance(couponed_cart)
   clearance_cart.each do |key, val|
-    sum += (val[:price] val[:count])
+    sum += (val[:price] * val[:count])
   end
   
   if sum > 100
