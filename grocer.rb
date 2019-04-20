@@ -23,6 +23,7 @@ def apply_coupons(cart, coupons)
         binding.pry
         hash[item + " W/COUPON"] = {:price => ele[:cost], :clearance => values[:clearance], :count => coupons.count(ele)}
         hash[item][:count] -= ele[:num] if item == ele[:item]
+        coupons.pop
       end
     end
   end
