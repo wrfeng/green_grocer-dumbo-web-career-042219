@@ -48,7 +48,7 @@ def checkout(cart, coupons)
   clearance_cart = apply_clearance(couponed_cart)
   binding.pry
   clearance_cart.each do |key, val|
-    sum += val[:price]
+    sum += (val[:price] val[:count])
   end
   
   if sum > 100
