@@ -21,11 +21,11 @@ def apply_coupons(cart, coupons)
         hash[item] = values
         if item == ele[:item]
           binding.pry
-          hash[item][:count] -= ele[:num]
           binding.pry
           hash[item + " W/COUPON"] = {:price => ele[:cost], :clearance => values[:clearance], :count => 1}
         end
       end
+          hash[item][:count] -= ele[:num]
     end
   end
   
