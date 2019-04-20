@@ -17,6 +17,7 @@ def apply_coupons(cart, coupons)
       ele.each do |coupon_item, coupon_values|
         if item == ele[:item]
           values[:count] -= ele[:num]
+          cart[item + " W/COUPON"] = {}
         end
       end
     end
