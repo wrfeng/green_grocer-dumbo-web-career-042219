@@ -235,8 +235,9 @@ describe "Grocer" do
         milk = find_item("SOY MILK")
         cart = [milk, avocado, avocado, cheese, cheese, cheese]
         coupons = [find_coupon("AVOCADO"), find_coupon("CHEESE")]
-
+        binding.pry
         consolidated = consolidate_cart(cart)
+          binding.pry
         coupons_applied = apply_coupons(consolidated, coupons)
         clearance_applied = apply_clearance(coupons_applied)
 
