@@ -289,7 +289,9 @@ describe "Grocer" do
         cart = Array.new(3, beer)
         beer_coupon = find_coupon("BEER")
         coupons = [beer_coupon, beer_coupon]
+        binding.pry
         expect(checkout(cart, coupons)).to eq(33.00)
+        binding.pry
       end
     end
 
