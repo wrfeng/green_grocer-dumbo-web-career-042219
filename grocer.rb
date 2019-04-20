@@ -15,7 +15,7 @@ end
 def apply_coupons(cart, coupons)
   hash = {}
   return cart if coupons.empty?
-  coupons_applied = 0
+  coupons_applied = []
 
   cart.each do |item, values|
     hash[item] = values
