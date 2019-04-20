@@ -20,9 +20,8 @@ def apply_coupons(cart, coupons)
         hash[item] = values
         if item == ele[:item]
           values[:count] -= ele[:num]
-          hash[item] = values
-          string = item + " W/COUPON"
-          hash[string] = {:price => ele[:cost], :clearance => values[:clearance], :count => 1}
+          hash[item][:count] -= ele[:num]
+          hash[item + " W/COUPON"] = {:price => ele[:cost], :clearance => values[:clearance], :count => 1}
         end
       end
     end
