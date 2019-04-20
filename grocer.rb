@@ -44,8 +44,12 @@ def checkout(cart, coupons)
   sum = 0
   
   consolidated_cart = consolidate_cart(cart)
+  binding.pry
   couponed_cart = apply_coupons(consolidated_cart, coupons)
+  binding.pry
   clearance_cart = apply_clearance(couponed_cart)
+  binding.pry
+  
   clearance_cart.each do |key, val|
     sum += (val[:price] * val[:count])
   end
