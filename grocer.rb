@@ -16,8 +16,11 @@ def apply_coupons(cart, coupons)
   hash = {}
   binding.pry
   cart.each do |item, values|
+    binding.pry
     coupons.each do |ele|
+      binding.pry
       ele.each do |coupon_item, coupon_values|
+        binding.pry
         hash[item] = values
         if item == ele[:item]
           # hash[item][:count] = 0
