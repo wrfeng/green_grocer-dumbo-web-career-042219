@@ -32,7 +32,7 @@ end
 def apply_clearance(cart)
   cart.each do |key, val|
     if val[:clearance]
-      (val[:price] *= 0.80)
+      (val[:price] *= 0.80) / 1000
     end
   end
   
