@@ -14,18 +14,17 @@ end
 
 def apply_coupons(cart, coupons)
   hash = {}
-  
-  unless coupons.empty?
-    cart.each do |item, values|
-      coupons.each do |ele|
-        ele.each do |coupon_item, coupon_values|
-          hash[item] = values
-          if item == ele[:item]
-            hash[item + " W/COUPON"] = {:price => ele[:cost], :clearance => values[:clearance], :count => 1}
-          end
+  return cart if coupons.empty?
+
+  cart.each do |item, values|
+    coupons.each do |ele|
+      ele.each do |coupon_item, coupon_values|
+        hash[item] = values
+        if item == ele[:item]
+          hash[item + " W/COUPON"] = {:price => ele[:cost], :clearance => values[:clearance], :count => 1}
         end
-            hash[item][:count] -= ele[:num] if item == ele[:item]
       end
+          hash[item][:count] -= ele[:num] if item == ele[:item]
     end
   end
   
