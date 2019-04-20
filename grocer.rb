@@ -14,7 +14,7 @@ end
 
 def apply_coupons(cart, coupons)
   hash = {}
-  
+  binding.pry
   cart.each do |item, values|
     coupons.each do |ele|
       ele.each do |coupon_item, coupon_values|
